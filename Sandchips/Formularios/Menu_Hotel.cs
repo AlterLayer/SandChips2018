@@ -148,5 +148,18 @@ namespace Sandchips.Formularios
         private void pictureBox4_Click_1(object sender, EventArgs e)
         {
         }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Form Usuarios = new inicio();
+            Usuarios.Show();
+            this.Hide();
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
