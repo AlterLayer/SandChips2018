@@ -69,6 +69,12 @@
     <Compile Include="DAL\DALClientes.cs" />
     <Compile Include="DAL\DALUsuarios.cs" />
     <Compile Include="DAL\NoEspacios.cs" />
+    <Compile Include="Formularios\Pruebadeseguridad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Pruebadeseguridad.designer.cs">
+      <DependentUpon>Pruebadeseguridad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\RecuperarContra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     <Compile Include="Models\ModelTipoUsuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Pruebadeseguridad.resx">
+      <DependentUpon>Pruebadeseguridad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RecuperarContra.resx">
       <DependentUpon>RecuperarContra.cs</DependentUpon>
     </EmbeddedResource>
