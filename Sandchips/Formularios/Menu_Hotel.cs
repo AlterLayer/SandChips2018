@@ -161,5 +161,12 @@ namespace Sandchips.Formularios
         {
 
         }
+
+        private void pictureBox11_Click_2(object sender, EventArgs e)
+        {
+            Form Usuarios = new Pruebadeseguridad();
+            Usuarios.Show();
+            this.Hide();
+        }
     }
 }
