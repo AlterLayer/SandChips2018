@@ -49,10 +49,9 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tw Cen MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.AntiqueWhite;
-            this.label3.Location = new System.Drawing.Point(881, 720);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(603, 652);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 20);
+            this.label3.Size = new System.Drawing.Size(50, 15);
             this.label3.TabIndex = 14;
             this.label3.Text = "Acceder";
             // 
@@ -60,10 +59,9 @@
             // 
             this.btnacceder.BackColor = System.Drawing.Color.Transparent;
             this.btnacceder.Image = ((System.Drawing.Image)(resources.GetObject("btnacceder.Image")));
-            this.btnacceder.Location = new System.Drawing.Point(883, 756);
-            this.btnacceder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnacceder.Location = new System.Drawing.Point(606, 680);
             this.btnacceder.Name = "btnacceder";
-            this.btnacceder.Size = new System.Drawing.Size(65, 57);
+            this.btnacceder.Size = new System.Drawing.Size(49, 46);
             this.btnacceder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnacceder.TabIndex = 13;
             this.btnacceder.TabStop = false;
@@ -72,11 +70,10 @@
             // mtbcontraseña
             // 
             this.mtbcontraseña.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbcontraseña.Location = new System.Drawing.Point(732, 668);
-            this.mtbcontraseña.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtbcontraseña.Location = new System.Drawing.Point(549, 543);
             this.mtbcontraseña.Name = "mtbcontraseña";
             this.mtbcontraseña.PasswordChar = '*';
-            this.mtbcontraseña.Size = new System.Drawing.Size(360, 33);
+            this.mtbcontraseña.Size = new System.Drawing.Size(271, 28);
             this.mtbcontraseña.TabIndex = 12;
             // 
             // label2
@@ -85,10 +82,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tw Cen MT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Bisque;
-            this.label2.Location = new System.Drawing.Point(836, 635);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(627, 516);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 31);
+            this.label2.Size = new System.Drawing.Size(112, 24);
             this.label2.TabIndex = 9;
             this.label2.Text = "Contraseña:";
             // 
@@ -98,31 +94,28 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Bisque;
-            this.label1.Location = new System.Drawing.Point(855, 462);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(641, 375);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 31);
+            this.label1.Size = new System.Drawing.Size(79, 24);
             this.label1.TabIndex = 10;
             this.label1.Text = "Usuario:";
             // 
             // txtusuario
             // 
             this.txtusuario.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusuario.Location = new System.Drawing.Point(732, 495);
-            this.txtusuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtusuario.Location = new System.Drawing.Point(549, 402);
             this.txtusuario.Multiline = true;
             this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(360, 35);
+            this.txtusuario.Size = new System.Drawing.Size(271, 29);
             this.txtusuario.TabIndex = 11;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(589, 9);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(442, 7);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(667, 950);
+            this.pictureBox3.Size = new System.Drawing.Size(500, 772);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 15;
             this.pictureBox3.TabStop = false;
@@ -131,10 +124,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(971, 756);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(715, 680);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 57);
+            this.pictureBox1.Size = new System.Drawing.Size(49, 46);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
@@ -146,21 +138,20 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tw Cen MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.AntiqueWhite;
-            this.label4.Location = new System.Drawing.Point(970, 720);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(676, 652);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 20);
+            this.label4.Size = new System.Drawing.Size(121, 15);
             this.label4.TabIndex = 17;
             this.label4.Text = "Recuperar contraseña";
             // 
             // Log_in_general
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(27)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(1821, 970);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
@@ -171,7 +162,6 @@
             this.Controls.Add(this.txtusuario);
             this.Controls.Add(this.pictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Log_in_general";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hotel_Reservacion_y_Chequeo";

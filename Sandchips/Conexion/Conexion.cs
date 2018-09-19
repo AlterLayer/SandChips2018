@@ -29,7 +29,7 @@ namespace Sandchips
             catch (Exception ex)
             {
                 MySqlConnection conex = new MySqlConnection();
-                MessageBox.Show("Error al intentar conectar a la base de datos, Verifique que la base este cargada. " + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al intentar conectar a la base de datos, Verifique que la base este cargada. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return conex;
                 
             }
