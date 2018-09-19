@@ -128,7 +128,7 @@ namespace Sandchips.Formularios
                 int datos = DALHotel.modificar(agregar);
                 if (datos > 0)
                 {
-                    MessageBox.Show("Registro modificado correctamente nel", "Operacón exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Registro modificado correctamente", "Operacón exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtidreservacion.Clear();
                     txtprecio.Clear();
                     cmbIdCliente.SelectedIndex = 0;

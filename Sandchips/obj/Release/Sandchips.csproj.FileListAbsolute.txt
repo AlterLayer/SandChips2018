@@ -135,3 +135,4 @@ C:\Users\diego\Source\Repos\SandChips2018\Sandchips\bin\Release\Sandchips.exe
 C:\Users\diego\Source\Repos\SandChips2018\Sandchips\bin\Release\Sandchips.pdb
 C:\Users\diego\Source\Repos\SandChips2018\Sandchips\bin\Release\itextsharp.xml
 C:\Users\diego\Source\Repos\SandChips2018\Sandchips\bin\Release\MySql.Data.xml
+C:\Users\diego\Source\Repos\SandChips2018\Sandchips\obj\Release\Sandchips.Formularios.Reporte.resources

@@ -102,6 +102,7 @@ namespace Sandchips.Formularios
                 int datos = DALClientes.agregar(agregar);
                 if (datos > 0)
                 {
+                    dgvClientes.DataSource = DALClientes.mostrartabla();
                     MessageBox.Show("Registro ingresado correctamente", "Operacón exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtIdClientes.Clear();
                     txtNombre.Clear();
@@ -111,7 +112,7 @@ namespace Sandchips.Formularios
                     txtDocumento.Clear();
                     mtbTelefono.Clear();
                     cmbGenero.SelectedIndex = 0;
-                    cmbUsuario.SelectedIndex = 0;
+                    cmbUsuario.SelectedIndex = 0; 
                 }
                 else
                 {
@@ -142,6 +143,7 @@ namespace Sandchips.Formularios
                 int datos = DALClientes.actualizar(agregar);
                 if (datos > 0)
                 {
+                    dgvClientes.DataSource = DALClientes.mostrartabla();
                     MessageBox.Show("Registro modificado correctamente", "Operacón exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtIdClientes.Clear();
                     txtNombre.Clear();
@@ -151,7 +153,7 @@ namespace Sandchips.Formularios
                     txtDocumento.Clear();
                     mtbTelefono.Clear();
                     cmbGenero.SelectedIndex = 0;
-                    cmbUsuario.SelectedIndex = 0;
+                    cmbUsuario.SelectedIndex = 0; 
                 }
                 else
                 {

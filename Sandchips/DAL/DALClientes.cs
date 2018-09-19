@@ -33,18 +33,18 @@ namespace Sandchips.DAL
         public static int actualizar(ModelClientes update)
         {
             int retorno = 0;
-           /* try
-            {*/
+            try
+            {
                 //tipo entero
 
                 MySqlCommand consulta = new MySqlCommand(string.Format("UPDATE tbmaeclientes SET IdClientes='{0}', Nombre='{1}', Apellidos='{2}', Documento='{3}', Telefono='{4}', IdGenero='{5}', IdEstado='{6}', IdUsuario='{7}', IdTipoDocumento='{8}' WHERE IdClientes='{9}'", update.IdClientes, update.Nombre, update.Apellidos, update.Documento, update.Telefono, update.IdGenero, 1, update.IdUsuario, update.IdTipoDocumento,update.IdClientes), Conexion.obtenerconexion());
                 retorno = consulta.ExecuteNonQuery();
 
-           /* }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Ha ocurrido un error al intentar actualizar un dato. " + ex);
-            }*/
+           }
             return retorno;
         }//fin del try - Catch
         public static DataTable mostrartabla()
