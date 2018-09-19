@@ -40,12 +40,15 @@
     <Reference Include="itextsharp">
       <HintPath>..\..\..\..\Desktop\PTC\iTextSharp\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data, Version=6.10.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,6 +72,26 @@
     <Compile Include="DAL\DALClientes.cs" />
     <Compile Include="DAL\DALUsuarios.cs" />
     <Compile Include="DAL\NoEspacios.cs" />
+    <Compile Include="DataSetC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetH.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetTH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTH.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetU.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -85,6 +108,12 @@
     </Compile>
     <Compile Include="Formularios\RecuperarContra.Designer.cs">
       <DependentUpon>RecuperarContra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reporte.Designer.cs">
+      <DependentUpon>Reporte.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Restaurante.cs">
       <SubType>Form</SubType>
@@ -197,6 +226,9 @@
     <EmbeddedResource Include="Formularios\RecuperarContra.resx">
       <DependentUpon>RecuperarContra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reporte.resx">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Restaurante.resx">
       <DependentUpon>Restaurante.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,7 +284,55 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportTipoHabitaciones.rdlc" />
+    <EmbeddedResource Include="ReportRestaurante.rdlc" />
+    <EmbeddedResource Include="ReportHabitaciones.rdlc" />
+    <EmbeddedResource Include="ReportCliente.rdlc" />
     <EmbeddedResource Include="ReportUsuario.rdlc" />
+    <None Include="DataSetC.xsc">
+      <DependentUpon>DataSetC.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetC.xss">
+      <DependentUpon>DataSetC.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetH.xsc">
+      <DependentUpon>DataSetH.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetH.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetH.xss">
+      <DependentUpon>DataSetH.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetR.xsc">
+      <DependentUpon>DataSetR.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetR.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetR.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetR.xss">
+      <DependentUpon>DataSetR.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTH.xsc">
+      <DependentUpon>DataSetTH.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTH.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetTH.xss">
+      <DependentUpon>DataSetTH.xsd</DependentUpon>
+    </None>
     <None Include="DataSetU.xsc">
       <DependentUpon>DataSetU.xsd</DependentUpon>
     </None>

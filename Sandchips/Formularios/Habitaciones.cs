@@ -8,6 +8,10 @@ using System.Text;
 using System.Windows.Forms;
 using Sandchips.Models;
 using Sandchips.DAL;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System.Diagnostics;
+using System.IO;
 
 namespace Sandchips.Formularios
 {
@@ -392,7 +396,7 @@ namespace Sandchips.Formularios
 
         private void txtBuscarT_TextChanged(object sender, EventArgs e)
         {
-            txtBuscarT.Text.TrimStart();
+            
         }
 
         private void txtBuscarT_KeyPress(object sender, KeyPressEventArgs e)
@@ -460,7 +464,6 @@ namespace Sandchips.Formularios
         private void tabControl1_MouseClick(object sender, MouseEventArgs e)
         {
             dgvHabitaciones.DataSource = DALHabitaciones.mostrartabla();
-            dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
             Conexion.obtenerconexion();
             cmbTipo_hab.DataSource = DALHabitaciones.ObtenerTipo_Hab();
             cmbTipo_hab.DisplayMember = "TipoHabitacion";
@@ -479,7 +482,6 @@ namespace Sandchips.Formularios
         private void tabControl1_Click(object sender, EventArgs e)
         {            
             dgvHabitaciones.DataSource = DALHabitaciones.mostrartabla();
-            dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
             Conexion.obtenerconexion();
             cmbTipo_hab.DataSource = DALHabitaciones.ObtenerTipo_Hab();
             cmbTipo_hab.DisplayMember = "TipoHabitacion";
@@ -575,16 +577,125 @@ namespace Sandchips.Formularios
 
         private void txtTipo_Habitacion_TextChanged(object sender, EventArgs e)
         {
-            txtTipo_Habitacion.Text.TrimStart();
+            
         }
 
         private void btnlimpiarr_Click(object sender, EventArgs e)
         {
-            txtId_Tipo_Habitacion.Text = "";
-            txtTipo_Habitacion.Text = "";
-            btnAgregarT.Enabled = true;
-            btnModificarT.Enabled = false;
-            btnEliminarT.Enabled = false;
+            
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTHabitacion_Click(object sender, EventArgs e)
+        {
+            Form Habitaciones = new Tipo_Habitaciones();
+            Habitaciones.Show();
+            this.Hide();
+        }
+
+        private void crearPDF()
+        {
+            Document doc = new Document(PageSize.LETTER.Rotate(), 10, 10, 10, 10);
+            SaveFileDialog save = new SaveFileDialog();
+            save.InitialDirectory = "@C";
+            save.Title = "Guardar Reporte";
+            save.DefaultExt = "pdf";
+            save.Filter = "pdf Files (*.pdf)|*.pdf| All files (*.*)|*.*";
+            save.FilterIndex = 2;
+            save.RestoreDirectory = true;
+            string nombreArchivo = "";
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                nombreArchivo = save.FileName;
+            }
+            if (nombreArchivo.Trim() != "")
+            {
+                FileStream file = new FileStream(nombreArchivo,
+                                                FileMode.OpenOrCreate,
+                                                FileAccess.ReadWrite,
+                                                FileShare.ReadWrite);
+                PdfWriter.GetInstance(doc, file);
+                doc.Open();
+                string remitente = "Sandchip's Hotel & Restaurant";
+                string envio = "Fecha:" + DateTime.Now.ToString();
+
+                Chunk chunk = new Chunk("Reporte General de Habitaciones",
+                    FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.BOLD));
+                doc.Add(new Paragraph(chunk));
+                doc.Add(new Paragraph("             "));
+                doc.Add(new Paragraph("             "));
+                doc.Add(new Paragraph("---------------------------------------------------------"));
+                doc.Add(new Paragraph("Reporte de Usuarios"));
+                doc.Add(new Paragraph(remitente));
+                doc.Add(new Paragraph(envio));
+                doc.Add(new Paragraph("---------------------------------------------------------"));
+                doc.Add(new Paragraph("             "));
+                doc.Add(new Paragraph("             "));
+                reporte(doc);
+                doc.AddCreationDate();
+                doc.Add(new Paragraph("Reporte General de Clientes",
+                    FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.BOLD)));
+                doc.Add(new Paragraph("Firma: Sandchip's Hotel & Restaurant",
+                    FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.BOLD)));
+                doc.Close();
+                Process.Start(nombreArchivo);
+            }
+        }
+
+
+        public float[] columasdatagrid(DataGridView dg)
+        {
+            //Declarando un objeto(vector) de tipo flotante que contara
+            //las columnas de un objeto DataGridView
+            float[] values = new float[dg.ColumnCount];
+            //Evaluar el numero de columnas
+            for (int i = 0; i < dg.ColumnCount; i++)
+            {
+                values[i] = (float)dg.Columns[i].Width;
+            }
+            //Retorno el numero de Columnas
+            return values;
+        }
+
+
+        public void reporte(Document document)
+        {
+            int i, j;
+            PdfPTable datos = new PdfPTable(dgvHabitaciones.ColumnCount);
+            datos.DefaultCell.Padding = 3;
+            float[] margenAncho = columasdatagrid(dgvHabitaciones);
+            datos.SetWidths(margenAncho);
+            datos.WidthPercentage = 100;
+            datos.DefaultCell.BorderWidth = 1;
+            datos.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            for (i = 0; i < dgvHabitaciones.ColumnCount; i++)
+            {
+                datos.AddCell(dgvHabitaciones.Columns[i].HeaderText);
+            }
+            datos.HeaderRows = 1;
+            datos.DefaultCell.BorderWidth = 1;
+            for (i = 0; i < dgvHabitaciones.Rows.Count; i++)
+            {
+                for (j = 0; j < dgvHabitaciones.Columns.Count; j++)
+                {
+                    if (dgvHabitaciones[j, i].Value != null)
+                    {
+                        datos.AddCell(new Phrase(dgvHabitaciones[j, i].Value.ToString()));
+                    }
+                }
+                datos.CompleteRow();
+            }
+            document.Add(datos);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Reporte ReporteH = new Reporte();
+            ReporteH.Show();
         }
     }
 }
