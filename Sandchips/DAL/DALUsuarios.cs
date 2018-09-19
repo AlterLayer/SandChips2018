@@ -36,7 +36,7 @@ namespace Sandchips.DAL
             DataTable Consulta = new DataTable();
             try
             {
-                instruccion = "SELECT* FROM  tbmaeusuarios  WHERE IdEstado = 1";
+                instruccion = "SELECT u.IdUsuario, u.Usuario, u.Clave AS Contraseña, u.Nombres AS Nombre, u.Apellidos, u.Correo, u.NumeroDocumento, u.Direccion, u.Telefono, u.Nacimiento, td.Documento, g.Genero, e.Estado, tu.TipoUsuario FROM tbmaeusuarios u, tbdettipodocumento td, tbdetgenero g, tbmaeestado e, tbdettipousuarios tu WHERE u.IdEstado = e.IdEstado AND u.IdTipoDocumento = td.IdTipoDocumento GROUP BY u.IdUsuario";
                 //Guardamos en una variable tipo string la consulta a realizar a la base 
                 //instruccion = "Select id_usuario as Numero, usuario as usuario, Password as Clave, id_estado"
                 MySqlDataAdapter adapter = new MySqlDataAdapter(instruccion, Conexion.obtenerconexion());
@@ -53,7 +53,7 @@ namespace Sandchips.DAL
             int retorno = 0;
             try
             {
-                MySqlCommand consulta = new MySqlCommand(string.Format("UPDATE tbmaeusuarios SET Usuario='{1}',Clave='{2}',Nombres='{3}',Apellidos='{4}', Correo='{5}', NumeroDocumento='{6}', Direccion,='{7}' Telefono='{8}', Nacimiento='{9}', IdTipoDocumento='{10}', IdGenero='{11}', IdEstado='{12}', IdTipoUsuarios='{13}' WHERE IdUsuario='{5}'", update.IdUsuario, update.Usuario, update.Clave, update.Nombre, update.Apellidos, update.Correo, update.NumeroDocumento, update.Direccion, update.Telefono, update.Nacimiento, update.IdTipoDocumento, update.IdGenero, 1, update.IdTipoUsuarios), Conexion.obtenerconexion());
+                MySqlCommand consulta = new MySqlCommand(string.Format("UPDATE tbmaeusuarios SET Usuario='{1}',Clave='{2}',Nombres='{3}',Apellidos='{4}', Correo='{5}', NumeroDocumento='{6}', Direccion='{7}', Telefono='{8}', Nacimiento='{9}', IdTipoDocumento='{10}', IdGenero='{11}', IdEstado='{12}', IdTipoUsuarios='{13}' WHERE IdUsuario='{0}'", update.IdUsuario, update.Usuario, update.Clave, update.Nombre, update.Apellidos, update.Correo, update.NumeroDocumento, update.Direccion, update.Telefono, update.Nacimiento, update.IdTipoDocumento, update.IdGenero, 1, update.IdTipoUsuarios), Conexion.obtenerconexion());
                 retorno = consulta.ExecuteNonQuery();
             }
             catch (Exception ex)

@@ -17,5 +17,6 @@ namespace Sandchips.Models
         public int IdEstado { get; set; }
         public int IdUsuario { get; set; }
         public int IdTipoDocumento { get; set; }
+        public ModelClientes() { }
     }
 }

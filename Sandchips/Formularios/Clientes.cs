@@ -132,7 +132,9 @@ namespace Sandchips.Formularios
                 agregar.Telefono = mtbTelefono.Text;
                 agregar.IdGenero = Convert.ToInt32(cmbGenero.SelectedIndex.ToString());
                 agregar.IdUsuario = Convert.ToInt32(cmbTipoDoc.SelectedIndex.ToString());
+              
                 agregar.IdTipoDocumento = Convert.ToInt32(cmbUsuario.SelectedValue.ToString());
+                agregar.IdClientes = agregar.IdClientes;
                 int datos = DALClientes.actualizar(agregar);
                 if (datos > 0)
                 {

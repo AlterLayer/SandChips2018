@@ -32,6 +32,12 @@
             
             </summary>
         </member>
+        <member name="M:MySql.Data.MySqlClient.Authentication.MySqlWindowsAuthenticationPlugin.GetTargetName">
+            <summary>
+            Currently this method is unused
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:MySql.Data.MySqlClient.MySqlBulkLoader">
             <summary>
             
@@ -1153,6 +1159,31 @@
             are included as well as the entire parameter list.
             </summary>
             <returns>The cloned MySqlCommand object</returns>
+        </member>
+        <member name="M:MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync">
+            <summary>
+            Async version of ExecuteNonQuery
+            </summary>
+            <returns>int</returns>
+        </member>
+        <member name="M:MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync">
+            <summary>
+            Async version of ExecuteReader
+            </summary>
+            <returns>A MySqlDataReader object</returns>
+        </member>
+        <member name="M:MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(System.Data.CommandBehavior)">
+            <summary>
+            Async version of ExecuteReader
+            </summary>
+            <param name="behavior">Command Behavior</param>
+            <returns>A MySqlDataReader object</returns>
+        </member>
+        <member name="M:MySql.Data.MySqlClient.MySqlCommand.ExecuteScalarAsync">
+            <summary>
+            Async version of ExecuteScalar
+            </summary>
+            <returns>The first column of the first row in the result set, or a null reference if the result set is empty</returns>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlCommand.UpdatedRowSource">
             <summary>
@@ -2559,11 +2590,17 @@
             <param name="iso">The isolation level under which the transaction should run. </param>
             <returns>An object representing the new transaction.</returns>
         </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlConnection.ChangeDataBaseAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:MySql.Data.MySqlClient.MySqlConnection.ChangeDataBaseAsync(System.String)">
             <summary>
             Async version of ChangeDataBase
             </summary>
             <param name="databaseName">The name of the database to use.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MySql.Data.MySqlClient.MySqlConnection.OpenAsync">
+            <summary>
+            Async version of Open
+            </summary>
             <returns></returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlConnection.CloseAsync">
@@ -9381,13 +9418,6 @@
             </summary>
             <param name="server">The failed server</param>
         </member>
-        <member name="M:MySql.Data.MySqlClient.Replication.ReplicationServerGroup.HandleFailover(MySql.Data.MySqlClient.Replication.ReplicationServer,System.Exception)">
-            <summary>
-            Handles a failed connection to a server.
-            </summary>
-            <param name="server">The failed server</param>
-            <param name="exception">Exception that caused the failover</param>
-        </member>
         <member name="M:MySql.Data.MySqlClient.ResultSet.GetOrdinal(System.String)">
             <summary>
             return the ordinal for the given column name
@@ -9742,7 +9772,6 @@
             ASC
             ASENSITIVE
             BEFORE
-            BEGIN
             BETWEEN
             BIGINT
             BINARY
@@ -9758,7 +9787,6 @@
             CHECK
             COLLATE
             COLUMN
-            COMMIT
             CONDITION
             CONNECTION
             CONSTRAINT
@@ -9788,7 +9816,18 @@
             DETERMINISTIC
             DISTINCT
             DISTINCTROW
-            D [rest of string was truncated]&quot;;.
+            DIV
+            DOUBLE
+            DROP
+            DUAL
+            EACH
+            ELSE
+            ELSEIF
+            ENCLOSED
+            ESCAPED
+            EXISTS
+            EXIT
+            EXP [rest of string was truncated]&quot;;.
              </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.Properties.Resources.MixedParameterNamingNotAllowed">

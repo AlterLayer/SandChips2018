@@ -117,5 +117,12 @@ namespace Sandchips.Formularios
             this.Hide();
             principal.Show();
         }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Form Menu_Restaurante = new Usuarios();
+            Menu_Restaurante.Show();
+            this.Hide();
+        }
     }
 }

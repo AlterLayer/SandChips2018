@@ -21,5 +21,6 @@ namespace Sandchips.Models
         public int IdGenero { get; set; }
         public int IdEstado { get; set; }
         public int IdTipoUsuarios { get; set; }
+        public ModelUsuario() { }
     }
 }

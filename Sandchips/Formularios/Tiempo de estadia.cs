@@ -25,7 +25,7 @@ namespace Sandchips.Formularios
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            Form Tiempo_de_estadia= new Chequeo_habitaciones();
+            Form Tiempo_de_estadia= new Tipo_Habitaciones();
             Tiempo_de_estadia.Show();
             this.Hide();
         }

@@ -30,13 +30,13 @@ namespace Sandchips.Formularios
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnlimpiiar = new System.Windows.Forms.Button();
             this.cmbTipoUsuario = new System.Windows.Forms.ComboBox();
             this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
             this.mtbTelefono = new System.Windows.Forms.MaskedTextBox();
@@ -74,8 +74,6 @@ namespace Sandchips.Formularios
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnlimpiiar = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -83,22 +81,10 @@ namespace Sandchips.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuarios)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LightSlateGray;
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1032, 54);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(6, 20);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(29, 28);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -109,7 +95,7 @@ namespace Sandchips.Formularios
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(984, 11);
+            this.pictureBox2.Location = new System.Drawing.Point(1318, 19);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(28, 29);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -122,9 +108,9 @@ namespace Sandchips.Formularios
             this.panel2.Controls.Add(this.label11);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(0, 54);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(8, 586);
+            this.panel2.Size = new System.Drawing.Size(8, 768);
             this.panel2.TabIndex = 1;
             // 
             // label11
@@ -141,6 +127,9 @@ namespace Sandchips.Formularios
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(110)))), ((int)(((byte)(93)))));
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.btnlimpiiar);
             this.panel3.Controls.Add(this.cmbTipoUsuario);
             this.panel3.Controls.Add(this.dtpNacimiento);
@@ -179,20 +168,36 @@ namespace Sandchips.Formularios
             this.panel3.Controls.Add(this.btnBuscar);
             this.panel3.Controls.Add(this.txtbuscar);
             this.panel3.Controls.Add(this.label12);
-            this.panel3.Location = new System.Drawing.Point(0, 54);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(8, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1032, 621);
+            this.panel3.Size = new System.Drawing.Size(1358, 768);
             this.panel3.TabIndex = 2;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // btnlimpiiar
+            // 
+            this.btnlimpiiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(239)))), ((int)(((byte)(158)))));
+            this.btnlimpiiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnlimpiiar.ForeColor = System.Drawing.Color.Black;
+            this.btnlimpiiar.Location = new System.Drawing.Point(637, 390);
+            this.btnlimpiiar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnlimpiiar.Name = "btnlimpiiar";
+            this.btnlimpiiar.Size = new System.Drawing.Size(115, 31);
+            this.btnlimpiiar.TabIndex = 0;
+            this.btnlimpiiar.Text = "Limpiar campos";
+            this.btnlimpiiar.UseVisualStyleBackColor = false;
+            this.btnlimpiiar.Click += new System.EventHandler(this.btnlimpiiar_Click);
             // 
             // cmbTipoUsuario
             // 
             this.cmbTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoUsuario.FormattingEnabled = true;
-            this.cmbTipoUsuario.Location = new System.Drawing.Point(780, 143);
-            this.cmbTipoUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTipoUsuario.Location = new System.Drawing.Point(822, 270);
+            this.cmbTipoUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipoUsuario.Name = "cmbTipoUsuario";
             this.cmbTipoUsuario.Size = new System.Drawing.Size(174, 21);
-            this.cmbTipoUsuario.TabIndex = 109;
+            this.cmbTipoUsuario.TabIndex = 13;
             this.cmbTipoUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbTipoUsuario_KeyPress);
             // 
             // dtpNacimiento
@@ -200,69 +205,69 @@ namespace Sandchips.Formularios
             this.dtpNacimiento.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dtpNacimiento.CustomFormat = "yyyy/mm/dd";
             this.dtpNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNacimiento.Location = new System.Drawing.Point(780, 77);
-            this.dtpNacimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpNacimiento.Location = new System.Drawing.Point(822, 204);
+            this.dtpNacimiento.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNacimiento.MaxDate = new System.DateTime(2018, 12, 31, 0, 0, 0, 0);
             this.dtpNacimiento.Name = "dtpNacimiento";
             this.dtpNacimiento.Size = new System.Drawing.Size(151, 20);
-            this.dtpNacimiento.TabIndex = 108;
+            this.dtpNacimiento.TabIndex = 11;
             // 
             // mtbTelefono
             // 
-            this.mtbTelefono.Location = new System.Drawing.Point(780, 43);
-            this.mtbTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtbTelefono.Location = new System.Drawing.Point(822, 170);
+            this.mtbTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.mtbTelefono.Mask = "9999-9999";
             this.mtbTelefono.Name = "mtbTelefono";
-            this.mtbTelefono.Size = new System.Drawing.Size(66, 20);
-            this.mtbTelefono.TabIndex = 107;
+            this.mtbTelefono.Size = new System.Drawing.Size(59, 20);
+            this.mtbTelefono.TabIndex = 10;
             this.mtbTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbTelefono_KeyPress);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label15.Location = new System.Drawing.Point(670, 140);
+            this.label15.Location = new System.Drawing.Point(699, 267);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(67, 15);
-            this.label15.TabIndex = 101;
+            this.label15.Size = new System.Drawing.Size(85, 20);
+            this.label15.TabIndex = 0;
             this.label15.Text = "Tipo Usuario";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label16.Location = new System.Drawing.Point(670, 109);
+            this.label16.Location = new System.Drawing.Point(699, 234);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(42, 15);
-            this.label16.TabIndex = 100;
+            this.label16.Size = new System.Drawing.Size(53, 20);
+            this.label16.TabIndex = 0;
             this.label16.Text = "Genero";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label17.Location = new System.Drawing.Point(670, 78);
+            this.label17.Location = new System.Drawing.Point(699, 203);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(89, 15);
-            this.label17.TabIndex = 99;
+            this.label17.Size = new System.Drawing.Size(113, 20);
+            this.label17.TabIndex = 0;
             this.label17.Text = "Fecha nacimiento";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label18.Location = new System.Drawing.Point(670, 50);
+            this.label18.Location = new System.Drawing.Point(699, 171);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(49, 15);
-            this.label18.TabIndex = 98;
+            this.label18.Size = new System.Drawing.Size(60, 20);
+            this.label18.TabIndex = 0;
             this.label18.Text = "Teléfono";
             // 
             // cmbGenero
@@ -272,122 +277,125 @@ namespace Sandchips.Formularios
             this.cmbGenero.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.cmbGenero.Location = new System.Drawing.Point(780, 107);
-            this.cmbGenero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbGenero.Location = new System.Drawing.Point(822, 234);
+            this.cmbGenero.Margin = new System.Windows.Forms.Padding(2);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(174, 21);
-            this.cmbGenero.TabIndex = 97;
+            this.cmbGenero.TabIndex = 12;
             this.cmbGenero.SelectedIndexChanged += new System.EventHandler(this.cmbGenero_SelectedIndexChanged);
             this.cmbGenero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbGenero_KeyPress);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label13.Location = new System.Drawing.Point(348, 182);
+            this.label13.Location = new System.Drawing.Point(377, 273);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(50, 15);
-            this.label13.TabIndex = 96;
+            this.label13.Size = new System.Drawing.Size(64, 20);
+            this.label13.TabIndex = 0;
             this.label13.Text = "Dirección";
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(460, 78);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCorreo.Location = new System.Drawing.Point(506, 170);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(174, 20);
-            this.txtCorreo.TabIndex = 95;
+            this.txtCorreo.TabIndex = 6;
             this.txtCorreo.TextChanged += new System.EventHandler(this.Correo_TextChanged);
             this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Correo_KeyPress);
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(460, 177);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDireccion.Location = new System.Drawing.Point(506, 269);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDireccion.MaxLength = 200;
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(174, 53);
-            this.txtDireccion.TabIndex = 94;
+            this.txtDireccion.TabIndex = 9;
             this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
             this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
             // txtNumeroDocumento
             // 
-            this.txtNumeroDocumento.Location = new System.Drawing.Point(460, 143);
-            this.txtNumeroDocumento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNumeroDocumento.Location = new System.Drawing.Point(506, 235);
+            this.txtNumeroDocumento.Margin = new System.Windows.Forms.Padding(2);
             this.txtNumeroDocumento.Name = "txtNumeroDocumento";
             this.txtNumeroDocumento.Size = new System.Drawing.Size(174, 20);
-            this.txtNumeroDocumento.TabIndex = 93;
+            this.txtNumeroDocumento.TabIndex = 8;
             this.txtNumeroDocumento.TextChanged += new System.EventHandler(this.txtNumeroDocumento_TextChanged);
             this.txtNumeroDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroDocumento_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(348, 141);
+            this.label1.Location = new System.Drawing.Point(377, 235);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 15);
-            this.label1.TabIndex = 89;
+            this.label1.Size = new System.Drawing.Size(125, 20);
+            this.label1.TabIndex = 0;
             this.label1.Text = "Número documento";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(348, 110);
+            this.label5.Location = new System.Drawing.Point(377, 203);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 15);
-            this.label5.TabIndex = 88;
+            this.label5.Size = new System.Drawing.Size(103, 20);
+            this.label5.TabIndex = 0;
             this.label5.Text = "Tipo Documento";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(348, 79);
+            this.label9.Location = new System.Drawing.Point(377, 171);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 15);
-            this.label9.TabIndex = 87;
+            this.label9.Size = new System.Drawing.Size(49, 20);
+            this.label9.TabIndex = 0;
             this.label9.Text = "Correo";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label10.Location = new System.Drawing.Point(348, 51);
+            this.label10.Location = new System.Drawing.Point(35, 343);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 15);
-            this.label10.TabIndex = 86;
+            this.label10.Size = new System.Drawing.Size(66, 20);
+            this.label10.TabIndex = 0;
             this.label10.Text = "Apellidos";
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(460, 43);
-            this.txtApellidos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApellidos.Location = new System.Drawing.Point(186, 341);
+            this.txtApellidos.Margin = new System.Windows.Forms.Padding(2);
+            this.txtApellidos.MaxLength = 45;
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(174, 20);
-            this.txtApellidos.TabIndex = 90;
+            this.txtApellidos.TabIndex = 5;
             this.txtApellidos.TextChanged += new System.EventHandler(this.txtApellidos_TextChanged);
             this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(136, 177);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Location = new System.Drawing.Point(186, 305);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombre.MaxLength = 45;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(174, 20);
-            this.txtNombre.TabIndex = 85;
+            this.txtNombre.TabIndex = 4;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -396,41 +404,41 @@ namespace Sandchips.Formularios
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(14, 3);
+            this.label7.Location = new System.Drawing.Point(34, 125);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(103, 32);
-            this.label7.TabIndex = 84;
+            this.label7.TabIndex = 0;
             this.label7.Text = "Usuarios";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(18, 179);
+            this.label6.Location = new System.Drawing.Point(34, 306);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 15);
-            this.label6.TabIndex = 71;
+            this.label6.Size = new System.Drawing.Size(58, 20);
+            this.label6.TabIndex = 0;
             this.label6.Text = "Nombre";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(20, 53);
+            this.label8.Location = new System.Drawing.Point(36, 171);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 15);
-            this.label8.TabIndex = 82;
+            this.label8.Size = new System.Drawing.Size(72, 20);
+            this.label8.TabIndex = 0;
             this.label8.Text = "Id Usuario";
             // 
             // txtIdUsuario
             // 
             this.txtIdUsuario.Enabled = false;
-            this.txtIdUsuario.Location = new System.Drawing.Point(136, 43);
-            this.txtIdUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdUsuario.Location = new System.Drawing.Point(186, 171);
+            this.txtIdUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdUsuario.Name = "txtIdUsuario";
             this.txtIdUsuario.ReadOnly = true;
             this.txtIdUsuario.Size = new System.Drawing.Size(76, 20);
@@ -439,13 +447,13 @@ namespace Sandchips.Formularios
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(18, 145);
+            this.label4.Location = new System.Drawing.Point(34, 267);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 15);
-            this.label4.TabIndex = 69;
+            this.label4.Size = new System.Drawing.Size(142, 20);
+            this.label4.TabIndex = 0;
             this.label4.Text = "Confirmar contraseña";
             // 
             // btnGuardar
@@ -453,11 +461,11 @@ namespace Sandchips.Formularios
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(239)))), ((int)(((byte)(158)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(16, 239);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Location = new System.Drawing.Point(55, 431);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(69, 31);
-            this.btnGuardar.TabIndex = 78;
+            this.btnGuardar.TabIndex = 0;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
@@ -467,13 +475,13 @@ namespace Sandchips.Formularios
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(18, 107);
+            this.label3.Location = new System.Drawing.Point(34, 232);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 15);
-            this.label3.TabIndex = 68;
+            this.label3.Size = new System.Drawing.Size(78, 20);
+            this.label3.TabIndex = 0;
             this.label3.Text = "Contraseña";
             // 
             // btnModificar
@@ -481,11 +489,11 @@ namespace Sandchips.Formularios
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(239)))), ((int)(((byte)(158)))));
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.ForeColor = System.Drawing.Color.Black;
-            this.btnModificar.Location = new System.Drawing.Point(124, 239);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificar.Location = new System.Drawing.Point(139, 431);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(69, 31);
-            this.btnModificar.TabIndex = 79;
+            this.btnModificar.TabIndex = 0;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
@@ -495,13 +503,13 @@ namespace Sandchips.Formularios
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(18, 82);
+            this.label2.Location = new System.Drawing.Point(34, 200);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 15);
-            this.label2.TabIndex = 67;
+            this.label2.Size = new System.Drawing.Size(56, 20);
+            this.label2.TabIndex = 0;
             this.label2.Text = "Usuario";
             // 
             // btnEliminar
@@ -509,11 +517,11 @@ namespace Sandchips.Formularios
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(239)))), ((int)(((byte)(158)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminar.Location = new System.Drawing.Point(233, 239);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Location = new System.Drawing.Point(223, 431);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(69, 31);
-            this.btnEliminar.TabIndex = 80;
+            this.btnEliminar.TabIndex = 0;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
@@ -525,11 +533,11 @@ namespace Sandchips.Formularios
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(239)))), ((int)(((byte)(158)))));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar.Location = new System.Drawing.Point(350, 239);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Location = new System.Drawing.Point(306, 431);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(69, 31);
-            this.btnCancelar.TabIndex = 81;
+            this.btnCancelar.TabIndex = 0;
             this.btnCancelar.Text = "Consultar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
@@ -538,12 +546,12 @@ namespace Sandchips.Formularios
             // 
             // mtbconfirmcontrasena
             // 
-            this.mtbconfirmcontrasena.Location = new System.Drawing.Point(136, 140);
-            this.mtbconfirmcontrasena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtbconfirmcontrasena.Location = new System.Drawing.Point(186, 268);
+            this.mtbconfirmcontrasena.Margin = new System.Windows.Forms.Padding(2);
             this.mtbconfirmcontrasena.Name = "mtbconfirmcontrasena";
             this.mtbconfirmcontrasena.PasswordChar = '*';
             this.mtbconfirmcontrasena.Size = new System.Drawing.Size(174, 20);
-            this.mtbconfirmcontrasena.TabIndex = 77;
+            this.mtbconfirmcontrasena.TabIndex = 3;
             this.mtbconfirmcontrasena.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbconfirmcontrasena_MaskInputRejected);
             this.mtbconfirmcontrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbconfirmcontrasena_KeyPress);
             // 
@@ -551,31 +559,32 @@ namespace Sandchips.Formularios
             // 
             this.cmbTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoDocumento.FormattingEnabled = true;
-            this.cmbTipoDocumento.Location = new System.Drawing.Point(460, 107);
-            this.cmbTipoDocumento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTipoDocumento.Location = new System.Drawing.Point(506, 199);
+            this.cmbTipoDocumento.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipoDocumento.Name = "cmbTipoDocumento";
             this.cmbTipoDocumento.Size = new System.Drawing.Size(174, 21);
-            this.cmbTipoDocumento.TabIndex = 73;
+            this.cmbTipoDocumento.TabIndex = 7;
             this.cmbTipoDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbTipoDocumento_KeyPress);
             // 
             // mtbcontrasena
             // 
-            this.mtbcontrasena.Location = new System.Drawing.Point(136, 109);
-            this.mtbcontrasena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtbcontrasena.Location = new System.Drawing.Point(186, 237);
+            this.mtbcontrasena.Margin = new System.Windows.Forms.Padding(2);
             this.mtbcontrasena.Name = "mtbcontrasena";
             this.mtbcontrasena.PasswordChar = '*';
             this.mtbcontrasena.Size = new System.Drawing.Size(174, 20);
-            this.mtbcontrasena.TabIndex = 76;
+            this.mtbcontrasena.TabIndex = 2;
             this.mtbcontrasena.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbcontrasena_MaskInputRejected);
             this.mtbcontrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbcontrasena_KeyPress);
             // 
             // txtusuario
             // 
-            this.txtusuario.Location = new System.Drawing.Point(136, 77);
-            this.txtusuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtusuario.Location = new System.Drawing.Point(186, 205);
+            this.txtusuario.Margin = new System.Windows.Forms.Padding(2);
+            this.txtusuario.MaxLength = 45;
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(174, 20);
-            this.txtusuario.TabIndex = 75;
+            this.txtusuario.TabIndex = 1;
             this.txtusuario.TextChanged += new System.EventHandler(this.txtusuario_TextChanged);
             this.txtusuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtusuario_KeyPress);
             // 
@@ -586,22 +595,22 @@ namespace Sandchips.Formularios
             this.dgvusuarios.AllowUserToResizeColumns = false;
             this.dgvusuarios.AllowUserToResizeRows = false;
             this.dgvusuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvusuarios.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvusuarios.Location = new System.Drawing.Point(16, 290);
-            this.dgvusuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvusuarios.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvusuarios.Location = new System.Drawing.Point(51, 491);
+            this.dgvusuarios.Margin = new System.Windows.Forms.Padding(2);
             this.dgvusuarios.Name = "dgvusuarios";
             this.dgvusuarios.ReadOnly = true;
             this.dgvusuarios.RowHeadersVisible = false;
             this.dgvusuarios.RowTemplate.Height = 24;
             this.dgvusuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvusuarios.Size = new System.Drawing.Size(996, 319);
+            this.dgvusuarios.Size = new System.Drawing.Size(933, 228);
             this.dgvusuarios.TabIndex = 48;
             this.dgvusuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvusuarios_CellClick);
             // 
@@ -611,21 +620,21 @@ namespace Sandchips.Formularios
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(874, 254);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Location = new System.Drawing.Point(822, 437);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(138, 28);
-            this.btnBuscar.TabIndex = 50;
+            this.btnBuscar.TabIndex = 0;
             this.btnBuscar.Text = "Buscar por Usuario";
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // txtbuscar
             // 
-            this.txtbuscar.Location = new System.Drawing.Point(614, 260);
-            this.txtbuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbuscar.Location = new System.Drawing.Point(582, 444);
+            this.txtbuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(230, 20);
-            this.txtbuscar.TabIndex = 51;
+            this.txtbuscar.TabIndex = 0;
             this.txtbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscar_KeyPress);
             // 
             // label12
@@ -633,43 +642,27 @@ namespace Sandchips.Formularios
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(456, 252);
+            this.label12.Location = new System.Drawing.Point(416, 442);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(152, 22);
-            this.label12.TabIndex = 52;
+            this.label12.TabIndex = 0;
             this.label12.Text = "Nombre de Usuario";
-            // 
-            // btnlimpiiar
-            // 
-            this.btnlimpiiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(239)))), ((int)(((byte)(158)))));
-            this.btnlimpiiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnlimpiiar.ForeColor = System.Drawing.Color.Black;
-            this.btnlimpiiar.Location = new System.Drawing.Point(743, 199);
-            this.btnlimpiiar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnlimpiiar.Name = "btnlimpiiar";
-            this.btnlimpiiar.Size = new System.Drawing.Size(115, 31);
-            this.btnlimpiiar.TabIndex = 110;
-            this.btnlimpiiar.Text = "Limpiar campos";
-            this.btnlimpiiar.UseVisualStyleBackColor = false;
-            this.btnlimpiiar.Click += new System.EventHandler(this.btnlimpiiar_Click);
             // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
-            this.ClientSize = new System.Drawing.Size(1032, 640);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Usuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chequeo_Mesa";
             this.Load += new System.EventHandler(this.Usuarios_Load);
             this.LocationChanged += new System.EventHandler(this.Usuarios_LocationChanged);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -682,8 +675,6 @@ namespace Sandchips.Formularios
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel2;

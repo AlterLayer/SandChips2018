@@ -10,5 +10,6 @@ namespace Sandchips.Models
     {
         public int IdTipoHabitacion { get; set; }
         public string TipoHabitacion { get; set; }  
+        public ModelTipoHabitacion() { }
     }
 }
