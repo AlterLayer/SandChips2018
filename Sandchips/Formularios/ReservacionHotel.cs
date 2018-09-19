@@ -27,37 +27,33 @@ namespace Sandchips.Formularios
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dgvClientes.DataSource = DALClientes.mostrartabla();
+            dgvReservacionHotel.DataSource = DALHotel.mostrartabla();
             Conexion.obtenerconexion();
-            cmbTipoDoc.DataSource = DALUsuarios.ObtenerTipoDocumento();
-            cmbTipoDoc.DisplayMember = "Documento";
-            cmbTipoDoc.ValueMember = "IdTipoDocumento";
-            cmbUsuario.DataSource = DALUsuarios.ObtenerTipoUsuario();
-            cmbUsuario.DisplayMember = "TipoUsuario";
-            cmbUsuario.ValueMember = "IdTipoUsuario";
-            cmbGenero.DataSource = DALUsuarios.ObtenerGenero();
-            cmbGenero.DisplayMember = "Genero";
-            cmbGenero.ValueMember = "IdGenero";
-            cmbTipoDoc.SelectedIndex = 0;
-            cmbGenero.SelectedIndex = 0;
-            cmbUsuario.SelectedIndex = 0;
+            cmbIdCliente.DataSource = DALHotel.ObtenerCliente();
+            cmbIdCliente.DisplayMember = "Nombre";
+            cmbIdCliente.ValueMember = "IdClientes";
+            cmbIdHabitacion.DataSource = DALHotel.Obtener_Hab();
+            cmbIdHabitacion.DisplayMember = "NumeroHabitacion";
+            cmbIdHabitacion.ValueMember = "IdHabitacion"; 
+            cmbIdCliente.SelectedIndex = -1;
+            cmbIdHabitacion.SelectedIndex = -1; 
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
 
         }
 
 
-        public bool ValidarPersonas()
+        public bool ValidarReservacion()
         {
             bool validacion = false;
-            if (txtNombre.Text != "" && txtApellido.Text != "" && txtDocumento.Text != "" && mtbTelefono.Text != "" && cmbTipoDoc.SelectedIndex != 0 && cmbGenero.SelectedIndex != 0 && cmbUsuario.SelectedIndex != 0)
+            if (dtpInicio.Value.Date <= dtpFin.Value.Date && cmbIdCliente.SelectedIndex != 0 && cmbIdHabitacion.SelectedIndex != 0)
             {
                 validacion = true;
             }
             else
             {
                 validacion = false;
-                MessageBox.Show("El campo nombre es requerido");
+                MessageBox.Show("Los campos con * son requeridos");
                 return validacion;
             }
             return validacion;
@@ -85,29 +81,25 @@ namespace Sandchips.Formularios
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
 
-            if (ValidarPersonas())
+            if (ValidarReservacion())
             {
-                ModelClientes agregar = new ModelClientes();
-                agregar.Nombre = txtNombre.Text;
-                agregar.Apellidos = txtApellido.Text;
-                agregar.Documento = txtDocumento.Text;
-                agregar.Telefono = mtbTelefono.Text;
-                agregar.IdGenero = Convert.ToInt32(cmbGenero.SelectedIndex.ToString());
-                agregar.IdUsuario = Convert.ToInt32(cmbTipoDoc.SelectedIndex.ToString());
-                agregar.IdTipoDocumento = Convert.ToInt32(cmbUsuario.SelectedValue.ToString());
-                int datos = DALClientes.agregar(agregar);
+                ModelHotel agregar = new ModelHotel();
+                var fecI = dtpInicio.Text.Split('/')[2] + "-" + dtpInicio.Text.Split('/')[1] + "-" + dtpInicio.Text.Split('/')[0];
+                agregar.FechaIngreso = fecI;
+                var fecF = dtpFin.Text.Split('/')[2] + "-" + dtpFin.Text.Split('/')[1] + "-" + dtpFin.Text.Split('/')[0];
+                agregar.FechaSalida = fecF; 
+                agregar.Precio = Convert.ToDouble(txtprecio.Text);
+                agregar.IdHabitaciones = Convert.ToInt32(cmbIdHabitacion.SelectedValue.ToString());
+                agregar.IdClientes = Convert.ToInt32(cmbIdCliente.SelectedValue.ToString()); 
+                int datos = DALHotel.agregar(agregar);
                 if (datos > 0)
                 {
                     MessageBox.Show("Registro ingresado correctamente", "Operacón exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtIdClientes.Clear();
-                    txtNombre.Clear();
-                    txtApellido.Clear();
-                    txtDocumento.Clear();
-                    cmbTipoDoc.SelectedIndex = 0;
-                    txtDocumento.Clear();
-                    mtbTelefono.Clear();
-                    cmbGenero.SelectedIndex = 0;
-                    cmbUsuario.SelectedIndex = 0;
+                    txtidreservacion.Clear(); 
+                    txtprecio.Clear();
+                    cmbIdCliente.SelectedIndex = 0;
+                    txtprecio.Clear(); 
+                    cmbIdHabitacion.SelectedIndex = 0; 
                 }
                 else
                 {
@@ -122,32 +114,26 @@ namespace Sandchips.Formularios
         //MODIFICAR CLIENTE
         private void btnActualizar_Click_1(object sender, EventArgs e)
         {
-            if (ValidarPersonas())
+            if (ValidarReservacion())
             {
-                ModelClientes agregar = new ModelClientes();
-                agregar.IdClientes = Convert.ToInt32(txtIdClientes.Text);
-                agregar.Nombre = txtNombre.Text;
-                agregar.Apellidos = txtApellido.Text;
-                agregar.Documento = txtDocumento.Text;
-                agregar.Telefono = mtbTelefono.Text;
-                agregar.IdGenero = Convert.ToInt32(cmbGenero.SelectedIndex.ToString());
-                agregar.IdUsuario = Convert.ToInt32(cmbTipoDoc.SelectedIndex.ToString());
-              
-                agregar.IdTipoDocumento = Convert.ToInt32(cmbUsuario.SelectedValue.ToString());
-                agregar.IdClientes = agregar.IdClientes;
-                int datos = DALClientes.actualizar(agregar);
+                ModelHotel agregar = new ModelHotel();
+                agregar.IdReservacionHotel = Convert.ToInt32(txtidreservacion.Text);
+                var fecI = dtpInicio.Text.Split('/')[2] + "-" + dtpInicio.Text.Split('/')[1] + "-" + dtpInicio.Text.Split('/')[0];
+                agregar.FechaIngreso = fecI;
+                var fecF = dtpFin.Text.Split('/')[2] + "-" + dtpFin.Text.Split('/')[1] + "-" + dtpFin.Text.Split('/')[0];
+                agregar.FechaSalida = fecF;
+                agregar.Precio = Convert.ToDouble(txtprecio.Text);
+                agregar.IdHabitaciones = Convert.ToInt32(cmbIdHabitacion.SelectedIndex.ToString());
+                agregar.IdClientes = Convert.ToInt32(cmbIdCliente.SelectedIndex.ToString());
+                int datos = DALHotel.modificar(agregar);
                 if (datos > 0)
                 {
-                    MessageBox.Show("Registro modificado correctamente", "Operacón exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtIdClientes.Clear();
-                    txtNombre.Clear();
-                    txtApellido.Clear();
-                    txtDocumento.Clear();
-                    cmbTipoDoc.SelectedIndex = 0;
-                    txtDocumento.Clear();
-                    mtbTelefono.Clear();
-                    cmbGenero.SelectedIndex = 0;
-                    cmbUsuario.SelectedIndex = 0;
+                    MessageBox.Show("Registro modificado correctamente nel", "Operacón exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtidreservacion.Clear();
+                    txtprecio.Clear();
+                    cmbIdCliente.SelectedIndex = 0;
+                    txtprecio.Clear();
+                    cmbIdHabitacion.SelectedIndex = 0;
                 }
                 else
                 {
@@ -170,11 +156,11 @@ namespace Sandchips.Formularios
                 }
 
                 ModelClientes eliminar = new ModelClientes();
-                eliminar.IdClientes = Convert.ToInt32(txtIdClientes.Text);
-                eliminar.IdEstado = Convert.ToInt32(cmbTipoDoc.SelectedIndex.ToString());
+                eliminar.IdClientes = Convert.ToInt32(txtidreservacion.Text);
+                eliminar.IdEstado = Convert.ToInt32(cmbIdCliente.SelectedIndex.ToString());
                 DALClientes.eliminar(eliminar);
                 MessageBox.Show("Registro eliminado exitosamente", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                dgvClientes.DataSource = DALClientes.mostrartabla();
+                dgvReservacionHotel.DataSource = DALClientes.mostrartabla();
             }
             else
             {
@@ -187,15 +173,13 @@ namespace Sandchips.Formularios
         private void dgvPersonas_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             int pocision;
-            pocision = dgvClientes.CurrentRow.Index;
-            txtIdClientes.Text = dgvClientes[0, pocision].Value.ToString();
-            txtNombre.Text = dgvClientes[1, pocision].Value.ToString();
-            txtApellido.Text = dgvClientes[2, pocision].Value.ToString();
-            txtDocumento.Text = dgvClientes[3, pocision].Value.ToString();
-            mtbTelefono.Text = dgvClientes[4, pocision].Value.ToString();
-            cmbGenero.SelectedValue = Convert.ToInt32(dgvClientes[5, pocision].Value.ToString());
-            cmbUsuario.SelectedValue = Convert.ToInt32(dgvClientes[7, pocision].Value.ToString());
-            cmbTipoDoc.SelectedValue = Convert.ToInt32(dgvClientes[8, pocision].Value.ToString());
+            pocision = dgvReservacionHotel.CurrentRow.Index;
+            txtidreservacion.Text = dgvReservacionHotel[0, pocision].Value.ToString();
+            dtpInicio.Value = Convert.ToDateTime(dgvReservacionHotel[1, pocision].Value);
+            dtpFin.Value = Convert.ToDateTime(dgvReservacionHotel[2, pocision].Value);
+            txtprecio.Text = dgvReservacionHotel[3, pocision].Value.ToString(); 
+            cmbIdHabitacion.SelectedValue = Convert.ToInt32(dgvReservacionHotel[5, pocision].Value.ToString());
+            cmbIdCliente.SelectedValue = Convert.ToInt32(dgvReservacionHotel[3, pocision].Value.ToString());
             btnEliminar.Enabled = true;
             btnActualizar.Enabled = true;
             btnGuardar.Enabled = false;
@@ -203,8 +187,7 @@ namespace Sandchips.Formularios
 
         //BUSCAR CLIENTE
         private void btnBuscar_Click_1(object sender, EventArgs e)
-        {
-            dgvClientes.DataSource = DALClientes.buscar(txtBuscar.Text);
+        { 
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -215,7 +198,7 @@ namespace Sandchips.Formularios
         //MOSTRAR CLIENTES
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-            dgvClientes.DataSource = DALClientes.mostrartabla();
+            dgvReservacionHotel.DataSource = DALHotel.mostrartabla();
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -257,8 +240,7 @@ namespace Sandchips.Formularios
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-            txtNombre.Text.TrimStart();
+        { 
         }
 
         private void cmbTipoDoc_KeyPress(object sender, KeyPressEventArgs e)
@@ -303,23 +285,20 @@ namespace Sandchips.Formularios
         }
 
         private void txtApellido_TextChanged(object sender, EventArgs e)
-        {
-            txtApellido.Text.TrimStart();
+        { 
         }
 
         private void txtDocumento_TextChanged(object sender, EventArgs e)
         {
-            txtDocumento.Text.TrimStart();
+            txtprecio.Text.TrimStart();
         }
 
         private void mtbTelefono_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-            mtbTelefono.Text.TrimStart();
+        { 
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-            txtBuscar.Text.TrimStart();
+        { 
         }
 
         private void btnGuardar_MouseMove(object sender, MouseEventArgs e)
@@ -372,15 +351,11 @@ namespace Sandchips.Formularios
         }
 
         private void btnBuscar_MouseMove(object sender, MouseEventArgs e)
-        {
-            btnBuscar.BackColor = Color.Black;
-            btnBuscar.ForeColor = Color.FromArgb(190, 239, 158);
+        { 
         }
 
         private void btnBuscar_MouseLeave(object sender, EventArgs e)
-        {
-            btnBuscar.BackColor = Color.FromArgb(190, 239, 158);
-            btnBuscar.ForeColor = Color.Black;
+        { 
         }
 
         private void cmbTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -394,20 +369,30 @@ namespace Sandchips.Formularios
         }
 
         private void btnlimpiar_Click(object sender, EventArgs e)
-        {
-            txtApellido.Text = "";
-            txtNombre.Text = "";
-            cmbGenero.SelectedIndex = 0;
-            cmbTipoDoc.SelectedIndex = 0;
-            mtbTelefono.Text = "";
-            cmbUsuario.SelectedIndex = 0;
-            txtIdClientes.Text = "";
-            txtDocumento.Text = "";
+        { 
+            cmbIdHabitacion.SelectedIndex = 0;
+            cmbIdCliente.SelectedIndex = 0; 
+            cmbIdHabitacion.SelectedIndex = 0;
+            txtidreservacion.Text = "";
+            txtprecio.Text = "";
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
             btnGuardar.Enabled = true;
         }
 
+        private void dgvReservacionHotel_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int pocision;
+            pocision = dgvReservacionHotel.CurrentRow.Index;
+            txtidreservacion.Text = dgvReservacionHotel[0, pocision].Value.ToString();
+            dtpInicio.Text = dgvReservacionHotel[1, pocision].Value.ToString();
+            dtpFin.Text = dgvReservacionHotel[2, pocision].Value.ToString();
+            cmbIdHabitacion.SelectedValue = Convert.ToInt32(dgvReservacionHotel[5, pocision].Value.ToString());
+            cmbIdCliente.SelectedValue = Convert.ToInt32(dgvReservacionHotel[3, pocision].Value.ToString()); 
+            btnEliminar.Enabled = true;
+            btnActualizar.Enabled = true;
+            btnGuardar.Enabled = false;
 
+        }
     }
 }

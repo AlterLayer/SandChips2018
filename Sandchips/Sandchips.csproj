@@ -63,6 +63,7 @@
     <Compile Include="Botones redondos.cs" />
     <Compile Include="Conexion\Conexion.cs" />
     <Compile Include="DAL\DALEmpresa.cs" />
+    <Compile Include="DAL\DALHotel.cs" />
     <Compile Include="DAL\DALRestaurante.cs" />
     <Compile Include="DAL\DALLocal.cs" />
     <Compile Include="DAL\DALTipoEmpresa.cs" />
@@ -212,6 +213,7 @@
       <DependentUpon>Tiempo de estadia.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ModelGenero.cs" />
+    <Compile Include="Models\ModelHotel.cs" />
     <Compile Include="Models\ModelRestaurante.cs" />
     <Compile Include="Models\ModelTipoDocumento.cs" />
     <Compile Include="Models\ModelTipoLocal.cs" />

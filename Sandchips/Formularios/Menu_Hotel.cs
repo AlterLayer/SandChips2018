@@ -171,10 +171,10 @@ namespace Sandchips.Formularios
             this.Hide();
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void pictureBox2_Click_1(object sender, EventArgs e)
         {
-            Form Menu_Hotel = new Tipo_Habitaciones();
-            Menu_Hotel.Show();
+            Form Usuarios = new ReservacionHotel();
+            Usuarios.Show();
             this.Hide();
         }
     }
