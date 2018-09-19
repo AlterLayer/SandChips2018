@@ -61,6 +61,7 @@ namespace Sandchips.Formularios
             this.mtbTelefono = new System.Windows.Forms.MaskedTextBox();
             this.btnlimpiar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnReporteC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -414,7 +415,7 @@ namespace Sandchips.Formularios
             this.btnlimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(239)))), ((int)(((byte)(158)))));
             this.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnlimpiar.ForeColor = System.Drawing.Color.Black;
-            this.btnlimpiar.Location = new System.Drawing.Point(821, 157);
+            this.btnlimpiar.Location = new System.Drawing.Point(787, 355);
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.Size = new System.Drawing.Size(90, 26);
             this.btnlimpiar.TabIndex = 112;
@@ -426,6 +427,7 @@ namespace Sandchips.Formularios
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(110)))), ((int)(((byte)(93)))));
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.btnReporteC);
             this.panel1.Controls.Add(this.btnlimpiar);
             this.panel1.Controls.Add(this.mtbTelefono);
             this.panel1.Controls.Add(this.pictureBox3);
@@ -461,6 +463,19 @@ namespace Sandchips.Formularios
             this.panel1.Size = new System.Drawing.Size(1366, 768);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnReporteC
+            // 
+            this.btnReporteC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(239)))), ((int)(((byte)(158)))));
+            this.btnReporteC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReporteC.ForeColor = System.Drawing.Color.Black;
+            this.btnReporteC.Location = new System.Drawing.Point(883, 355);
+            this.btnReporteC.Name = "btnReporteC";
+            this.btnReporteC.Size = new System.Drawing.Size(117, 26);
+            this.btnReporteC.TabIndex = 113;
+            this.btnReporteC.Text = "Generar Reporte";
+            this.btnReporteC.UseVisualStyleBackColor = false;
+            this.btnReporteC.Click += new System.EventHandler(this.btnReporteC_Click);
             // 
             // Clientes
             // 
@@ -514,6 +529,7 @@ namespace Sandchips.Formularios
         private System.Windows.Forms.MaskedTextBox mtbTelefono;
         private System.Windows.Forms.Button btnlimpiar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnReporteC;
     }
 }
 

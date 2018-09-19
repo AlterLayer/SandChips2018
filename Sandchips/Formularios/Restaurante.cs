@@ -8,6 +8,10 @@ using System.Text;
 using System.Windows.Forms;
 using Sandchips.Models;
 using Sandchips.DAL;
+using iTextSharp.text;
+using System.IO;
+using iTextSharp.text.pdf;
+using System.Diagnostics;
 
 namespace Sandchips.Formularios
 {
@@ -335,6 +339,107 @@ namespace Sandchips.Formularios
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void crearPDF()
+        {
+            Document doc = new Document(PageSize.LETTER.Rotate(), 10, 10, 10, 10);
+            SaveFileDialog save = new SaveFileDialog();
+            save.InitialDirectory = "@C";
+            save.Title = "Guardar Reporte";
+            save.DefaultExt = "pdf";
+            save.Filter = "pdf Files (*.pdf)|*.pdf| All files (*.*)|*.*";
+            save.FilterIndex = 2;
+            save.RestoreDirectory = true;
+            string nombreArchivo = "";
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                nombreArchivo = save.FileName;
+            }
+            if (nombreArchivo.Trim() != "")
+            {
+                FileStream file = new FileStream(nombreArchivo,
+                                                FileMode.OpenOrCreate,
+                                                FileAccess.ReadWrite,
+                                                FileShare.ReadWrite);
+                PdfWriter.GetInstance(doc, file);
+                doc.Open();
+                string remitente = "Sandchip's Hotel & Restaurant";
+                string envio = "Fecha:" + DateTime.Now.ToString();
+
+                Chunk chunk = new Chunk("Reporte General de Restaurantes",
+                    FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.BOLD));
+                doc.Add(new Paragraph(chunk));
+                doc.Add(new Paragraph("             "));
+                doc.Add(new Paragraph("             "));
+                doc.Add(new Paragraph("---------------------------------------------------------"));
+                doc.Add(new Paragraph("Reporte de Usuarios"));
+                doc.Add(new Paragraph(remitente));
+                doc.Add(new Paragraph(envio));
+                doc.Add(new Paragraph("---------------------------------------------------------"));
+                doc.Add(new Paragraph("             "));
+                doc.Add(new Paragraph("             "));
+                reporte(doc);
+                doc.AddCreationDate();
+                doc.Add(new Paragraph("Reporte General de Restaurantes",
+                    FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.BOLD)));
+                doc.Add(new Paragraph("Firma: Sandchip's Hotel & Restaurant",
+                    FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.BOLD)));
+                doc.Close();
+                Process.Start(nombreArchivo);
+            }
+        }
+
+
+        public float[] columasdatagrid(DataGridView dg)
+        {
+            //Declarando un objeto(vector) de tipo flotante que contara
+            //las columnas de un objeto DataGridView
+            float[] values = new float[dg.ColumnCount];
+            //Evaluar el numero de columnas
+            for (int i = 0; i < dg.ColumnCount; i++)
+            {
+                values[i] = (float)dg.Columns[i].Width;
+            }
+            //Retorno el numero de Columnas
+            return values;
+        }
+
+
+        public void reporte(Document document)
+        {
+            int i, j;
+            PdfPTable datos = new PdfPTable(dataGridView2.ColumnCount);
+            datos.DefaultCell.Padding = 3;
+            float[] margenAncho = columasdatagrid(dataGridView2);
+            datos.SetWidths(margenAncho);
+            datos.WidthPercentage = 100;
+            datos.DefaultCell.BorderWidth = 1;
+            datos.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            for (i = 0; i < dataGridView2.ColumnCount; i++)
+            {
+                datos.AddCell(dataGridView2.Columns[i].HeaderText);
+            }
+            datos.HeaderRows = 1;
+            datos.DefaultCell.BorderWidth = 1;
+            for (i = 0; i < dataGridView2.Rows.Count; i++)
+            {
+                for (j = 0; j < dataGridView2.Columns.Count; j++)
+                {
+                    if (dataGridView2[j, i].Value != null)
+                    {
+                        datos.AddCell(new Phrase(dataGridView2[j, i].Value.ToString()));
+                    }
+                }
+                datos.CompleteRow();
+            }
+            document.Add(datos);
+        }
+
+        private void btnReporteR_Click(object sender, EventArgs e)
+        {
+            Reporte ReporteR = new Reporte();
+            ReporteR.Show();
         }
     }
 }

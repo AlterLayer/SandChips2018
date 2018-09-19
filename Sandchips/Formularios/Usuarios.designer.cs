@@ -30,7 +30,7 @@ namespace Sandchips.Formularios
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -74,6 +74,7 @@ namespace Sandchips.Formularios
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.btnReporte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -128,6 +129,7 @@ namespace Sandchips.Formularios
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(110)))), ((int)(((byte)(93)))));
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.Controls.Add(this.btnReporte);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.btnlimpiiar);
@@ -595,14 +597,14 @@ namespace Sandchips.Formularios
             this.dgvusuarios.AllowUserToResizeColumns = false;
             this.dgvusuarios.AllowUserToResizeRows = false;
             this.dgvusuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvusuarios.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvusuarios.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvusuarios.Location = new System.Drawing.Point(51, 491);
             this.dgvusuarios.Margin = new System.Windows.Forms.Padding(2);
             this.dgvusuarios.Name = "dgvusuarios";
@@ -648,6 +650,20 @@ namespace Sandchips.Formularios
             this.label12.Size = new System.Drawing.Size(152, 22);
             this.label12.TabIndex = 0;
             this.label12.Text = "Nombre de Usuario";
+            // 
+            // btnReporte
+            // 
+            this.btnReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(239)))), ((int)(((byte)(158)))));
+            this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReporte.ForeColor = System.Drawing.Color.Black;
+            this.btnReporte.Location = new System.Drawing.Point(766, 390);
+            this.btnReporte.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(115, 31);
+            this.btnReporte.TabIndex = 84;
+            this.btnReporte.Text = "Generar Reporte";
+            this.btnReporte.UseVisualStyleBackColor = false;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // Usuarios
             // 
@@ -718,5 +734,6 @@ namespace Sandchips.Formularios
         private System.Windows.Forms.MaskedTextBox mtbTelefono;
         private System.Windows.Forms.DateTimePicker dtpNacimiento;
         private System.Windows.Forms.Button btnlimpiiar;
+        private System.Windows.Forms.Button btnReporte;
     }
 }

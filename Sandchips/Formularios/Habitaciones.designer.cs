@@ -35,8 +35,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,12 +54,12 @@
             this.txtId_hab = new System.Windows.Forms.TextBox();
             this.cmbEstado_hab = new System.Windows.Forms.ComboBox();
             this.cmbTipo_hab = new System.Windows.Forms.ComboBox();
+            this.btnTHabitacion = new System.Windows.Forms.Button();
+            this.btnReporteH = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHabitaciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,8 +69,6 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(80)))), ((int)(((byte)(87)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -84,7 +80,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(616, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(1334, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 19);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -95,7 +91,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(772, 12);
+            this.pictureBox4.Location = new System.Drawing.Point(1308, 12);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(20, 19);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -113,26 +109,6 @@
             this.pictureBox3.TabIndex = 21;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(954, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 19);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 21;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(928, 12);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(20, 19);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 20;
-            this.pictureBox5.TabStop = false;
             // 
             // label1
             // 
@@ -203,7 +179,7 @@
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(239)))), ((int)(((byte)(158)))));
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
-            this.btnLimpiar.Location = new System.Drawing.Point(689, 379);
+            this.btnLimpiar.Location = new System.Drawing.Point(1062, 379);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(104, 30);
@@ -386,6 +362,31 @@
             this.cmbTipo_hab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbTipo_hab_KeyPress);
             this.cmbTipo_hab.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmbTipo_hab_MouseClick);
             // 
+            // btnTHabitacion
+            // 
+            this.btnTHabitacion.BackColor = System.Drawing.Color.Turquoise;
+            this.btnTHabitacion.Location = new System.Drawing.Point(95, 654);
+            this.btnTHabitacion.Name = "btnTHabitacion";
+            this.btnTHabitacion.Size = new System.Drawing.Size(125, 46);
+            this.btnTHabitacion.TabIndex = 31;
+            this.btnTHabitacion.Text = "Ir a Tipo de Habitaciones";
+            this.btnTHabitacion.UseVisualStyleBackColor = false;
+            this.btnTHabitacion.Click += new System.EventHandler(this.btnTHabitacion_Click);
+            // 
+            // btnReporteH
+            // 
+            this.btnReporteH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(239)))), ((int)(((byte)(158)))));
+            this.btnReporteH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteH.ForeColor = System.Drawing.Color.Black;
+            this.btnReporteH.Location = new System.Drawing.Point(1170, 379);
+            this.btnReporteH.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReporteH.Name = "btnReporteH";
+            this.btnReporteH.Size = new System.Drawing.Size(104, 30);
+            this.btnReporteH.TabIndex = 32;
+            this.btnReporteH.Text = "Generar Reporte";
+            this.btnReporteH.UseVisualStyleBackColor = false;
+            this.btnReporteH.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Habitaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,6 +394,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(80)))), ((int)(((byte)(87)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.btnReporteH);
+            this.Controls.Add(this.btnTHabitacion);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnConsultar);
@@ -423,8 +426,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHabitaciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -436,8 +437,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
@@ -458,5 +457,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnTHabitacion;
+        private System.Windows.Forms.Button btnReporteH;
     }
 }

@@ -97,6 +97,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnReporteR = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -187,13 +188,14 @@
             this.panel2.Controls.Add(this.label18);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1300, 768);
+            this.panel2.Size = new System.Drawing.Size(1366, 768);
             this.panel2.TabIndex = 19;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.Controls.Add(this.btnReporteR);
             this.panel3.Controls.Add(this.pictureBox17);
             this.panel3.Controls.Add(this.pictureBox10);
             this.panel3.Controls.Add(this.label19);
@@ -380,6 +382,7 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(428, 438);
             this.dataGridView2.Name = "dataGridView2";
@@ -397,7 +400,8 @@
             this.textBox6.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.Location = new System.Drawing.Point(711, 199);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(205, 25);
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(117, 25);
             this.textBox6.TabIndex = 6;
             // 
             // txtNRC2
@@ -912,6 +916,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "*Campos Obligatorios*";
             // 
+            // btnReporteR
+            // 
+            this.btnReporteR.BackColor = System.Drawing.Color.Red;
+            this.btnReporteR.Location = new System.Drawing.Point(1117, 303);
+            this.btnReporteR.Name = "btnReporteR";
+            this.btnReporteR.Size = new System.Drawing.Size(101, 29);
+            this.btnReporteR.TabIndex = 20;
+            this.btnReporteR.Text = "Generar Reporte";
+            this.btnReporteR.UseVisualStyleBackColor = false;
+            this.btnReporteR.Click += new System.EventHandler(this.btnReporteR_Click);
+            // 
             // Restaurante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1029,5 +1044,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.PictureBox pictureBox17;
+        private System.Windows.Forms.Button btnReporteR;
     }
 }

@@ -8,6 +8,10 @@ using System.Text;
 using System.Windows.Forms;
 using Sandchips.Models;
 using Sandchips.DAL;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System.Diagnostics;
+using System.IO;
 
 namespace Sandchips.Formularios
 {
@@ -392,7 +396,7 @@ namespace Sandchips.Formularios
 
         private void txtBuscarT_TextChanged(object sender, EventArgs e)
         {
-            //txtBuscarT.Text.TrimStart();
+            txtBuscarT.Text.TrimStart();
         }
 
         private void txtBuscarT_KeyPress(object sender, KeyPressEventArgs e)
@@ -460,7 +464,7 @@ namespace Sandchips.Formularios
         private void tabControl1_MouseClick(object sender, MouseEventArgs e)
         {
             dgvHabitaciones.DataSource = DALHabitaciones.mostrartabla();
-            //dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
+            dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
             Conexion.obtenerconexion();
             cmbTipo_hab.DataSource = DALHabitaciones.ObtenerTipo_Hab();
             cmbTipo_hab.DisplayMember = "TipoHabitacion";
@@ -479,7 +483,7 @@ namespace Sandchips.Formularios
         private void tabControl1_Click(object sender, EventArgs e)
         {            
             dgvHabitaciones.DataSource = DALHabitaciones.mostrartabla();
-            //dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
+            dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
             Conexion.obtenerconexion();
             cmbTipo_hab.DataSource = DALHabitaciones.ObtenerTipo_Hab();
             cmbTipo_hab.DisplayMember = "TipoHabitacion";

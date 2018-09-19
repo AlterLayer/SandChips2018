@@ -46,7 +46,10 @@ namespace Sandchips.Formularios
             this.txtIdTipoHabitacion = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnReporteTH = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoHabitacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnlimpiarr
@@ -54,7 +57,7 @@ namespace Sandchips.Formularios
             this.btnlimpiarr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(239)))), ((int)(((byte)(158)))));
             this.btnlimpiarr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlimpiarr.ForeColor = System.Drawing.Color.Black;
-            this.btnlimpiarr.Location = new System.Drawing.Point(807, 277);
+            this.btnlimpiarr.Location = new System.Drawing.Point(1010, 277);
             this.btnlimpiarr.Margin = new System.Windows.Forms.Padding(2);
             this.btnlimpiarr.Name = "btnlimpiarr";
             this.btnlimpiarr.Size = new System.Drawing.Size(116, 32);
@@ -220,6 +223,31 @@ namespace Sandchips.Formularios
             this.label14.TabIndex = 50;
             this.label14.Text = "Tipo de habitación *";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1334, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 19);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 64;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // btnReporteTH
+            // 
+            this.btnReporteTH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(239)))), ((int)(((byte)(158)))));
+            this.btnReporteTH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteTH.ForeColor = System.Drawing.Color.Black;
+            this.btnReporteTH.Location = new System.Drawing.Point(1144, 277);
+            this.btnReporteTH.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReporteTH.Name = "btnReporteTH";
+            this.btnReporteTH.Size = new System.Drawing.Size(116, 32);
+            this.btnReporteTH.TabIndex = 65;
+            this.btnReporteTH.Text = "Generar Reporte";
+            this.btnReporteTH.UseVisualStyleBackColor = false;
+            this.btnReporteTH.Click += new System.EventHandler(this.btnReporteTH_Click);
+            // 
             // Tipo_Habitaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,6 +255,8 @@ namespace Sandchips.Formularios
             this.BackColor = System.Drawing.Color.LightBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.btnReporteTH);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnlimpiarr);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnConsultarT);
@@ -245,7 +275,9 @@ namespace Sandchips.Formularios
             this.Name = "Tipo_Habitaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chequeo_habitaciones";
+            this.Load += new System.EventHandler(this.Tipo_Habitaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoHabitacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,5 +299,7 @@ namespace Sandchips.Formularios
         private System.Windows.Forms.TextBox txtIdTipoHabitacion;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnReporteTH;
     }
 }

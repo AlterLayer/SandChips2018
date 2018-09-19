@@ -106,7 +106,7 @@ namespace Sandchips.Formularios
 
         private void pictureBox4_Click_1(object sender, EventArgs e)
         {
-            Form Form1 = new Restaurante();
+            Form Form1 = new Habitaciones();
             Form1.Show();
             this.Hide();
         }
