@@ -26,7 +26,7 @@ namespace Sandchips.Formularios
         private void Habitaciones_Load_1(object sender, EventArgs e)
         {
             dgvHabitaciones.DataSource = DALHabitaciones.mostrartabla();
-            dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
+            //dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
             Conexion.obtenerconexion();
             cmbTipo_hab.DataSource = DALHabitaciones.ObtenerTipo_Hab();
             cmbTipo_hab.DisplayMember = "TipoHabitacion";
@@ -36,10 +36,10 @@ namespace Sandchips.Formularios
             cmbEstado_hab.ValueMember = "IdEstado";
             cmbTipo_hab.SelectedIndex = 0;
             cmbEstado_hab.SelectedIndex = 0;
-            btnEliminarT.Enabled = false;
-            btnModificarT.Enabled = false;
-            btnModificarT.Enabled = false;
-            btnEliminarT.Enabled = false;
+            //btnEliminarT.Enabled = false;
+            //btnModificarT.Enabled = false;
+            //btnModificarT.Enabled = false;
+            //btnEliminarT.Enabled = false;
 
         }
 
@@ -243,13 +243,13 @@ namespace Sandchips.Formularios
                 if (ValidarHabT())
             {
                 ModelTipoHabitacion model = new ModelTipoHabitacion();
-                model.TipoHabitacion = txtTipo_Habitacion.Text;
+                //model.TipoHabitacion = txtTipo_Habitacion.Text;
                 int datos = DALTipoHabitaciones.agregar(model);
                 if (datos > 0)
                 {
                     MessageBox.Show("Registro ingresado correctamente", "Operacón exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
-                    txtTipo_Habitacion.Clear(); 
+                    //dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
+                    //txtTipo_Habitacion.Clear(); 
                 }
                 else
                 {
@@ -274,14 +274,14 @@ namespace Sandchips.Formularios
                 if (ValidarHabT())
             {
                 ModelTipoHabitacion model = new ModelTipoHabitacion();
-                model.IdTipoHabitacion = Convert.ToInt32(txtId_Tipo_Habitacion.Text);
-                model.TipoHabitacion = txtTipo_Habitacion.Text;
+                //model.IdTipoHabitacion = Convert.ToInt32(txtId_Tipo_Habitacion.Text);
+                //model.TipoHabitacion = txtTipo_Habitacion.Text;
                 int datos = DALTipoHabitaciones.modificar(model);
                 if (datos > 0)
                 {
                     MessageBox.Show("Registro modificado correctamente", "Operacón exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
-                    txtTipo_Habitacion.Clear();
+                    //dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
+                    //txtTipo_Habitacion.Clear();
                 }
                 else
                 {
@@ -307,9 +307,9 @@ namespace Sandchips.Formularios
             {
                 return;
             }
-            DALTipoHabitaciones.eliminar(Convert.ToInt32(txtId_Tipo_Habitacion.Text));
-            MessageBox.Show("Registro eliminado exitosamente", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
+            //DALTipoHabitaciones.eliminar(Convert.ToInt32(txtId_Tipo_Habitacion.Text));
+            //MessageBox.Show("Registro eliminado exitosamente", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
             }
             else
             {
@@ -319,39 +319,39 @@ namespace Sandchips.Formularios
 
         private void btnConsultarT_Click(object sender, EventArgs e)
         {
-            dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
+            //dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
         }
 
 
         private void dgvTipoHabitacion_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int pocision;
-            pocision = dgvTipoHabitacion.CurrentRow.Index;
-            txtId_Tipo_Habitacion.Text = dgvTipoHabitacion[0, pocision].Value.ToString();
-            txtTipo_Habitacion.Text = dgvTipoHabitacion[1, pocision].Value.ToString();
-            btnModificarT.Enabled = true;
-            btnEliminarT.Enabled = true;
-            btnAgregarT.Enabled = false;
+            //pocision = dgvTipoHabitacion.CurrentRow.Index;
+            //txtId_Tipo_Habitacion.Text = dgvTipoHabitacion[0, pocision].Value.ToString();
+            //txtTipo_Habitacion.Text = dgvTipoHabitacion[1, pocision].Value.ToString();
+            //btnModificarT.Enabled = true;
+            //btnEliminarT.Enabled = true;
+            //btnAgregarT.Enabled = false;
         }
 
         private void btnBuscarT_Click(object sender, EventArgs e)
         {
-            dgvTipoHabitacion.DataSource = DALTipoHabitaciones.buscar(txtBuscarT.Text);
+            //dgvTipoHabitacion.DataSource = DALTipoHabitaciones.buscar(txtBuscarT.Text);
         }
 
         public bool ValidarHabT()
         {
             bool validar = false;
-            if (txtTipo_Habitacion.Text != "")
-            {
-                validar = true;
-            }
-            else
-            {
-                validar = false;
-                MessageBox.Show("El campo tipo de habitación es requerido", "Operacón fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return validar;
-            } 
+            //if (txtTipo_Habitacion.Text != "")
+            //{
+            //    validar = true;
+            //}
+            //else
+            //{
+            //    validar = false;
+            //    MessageBox.Show("El campo tipo de habitación es requerido", "Operacón fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return validar;
+            //} 
             return validar;
         }
         #endregion
@@ -392,7 +392,7 @@ namespace Sandchips.Formularios
 
         private void txtBuscarT_TextChanged(object sender, EventArgs e)
         {
-            txtBuscarT.Text.TrimStart();
+            //txtBuscarT.Text.TrimStart();
         }
 
         private void txtBuscarT_KeyPress(object sender, KeyPressEventArgs e)
@@ -460,7 +460,7 @@ namespace Sandchips.Formularios
         private void tabControl1_MouseClick(object sender, MouseEventArgs e)
         {
             dgvHabitaciones.DataSource = DALHabitaciones.mostrartabla();
-            dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
+            //dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
             Conexion.obtenerconexion();
             cmbTipo_hab.DataSource = DALHabitaciones.ObtenerTipo_Hab();
             cmbTipo_hab.DisplayMember = "TipoHabitacion";
@@ -479,7 +479,7 @@ namespace Sandchips.Formularios
         private void tabControl1_Click(object sender, EventArgs e)
         {            
             dgvHabitaciones.DataSource = DALHabitaciones.mostrartabla();
-            dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
+            //dgvTipoHabitacion.DataSource = DALTipoHabitaciones.mostrartabla();
             Conexion.obtenerconexion();
             cmbTipo_hab.DataSource = DALHabitaciones.ObtenerTipo_Hab();
             cmbTipo_hab.DisplayMember = "TipoHabitacion";
@@ -575,16 +575,16 @@ namespace Sandchips.Formularios
 
         private void txtTipo_Habitacion_TextChanged(object sender, EventArgs e)
         {
-            txtTipo_Habitacion.Text.TrimStart();
+            //txtTipo_Habitacion.Text.TrimStart();
         }
 
         private void btnlimpiarr_Click(object sender, EventArgs e)
         {
-            txtId_Tipo_Habitacion.Text = "";
-            txtTipo_Habitacion.Text = "";
-            btnAgregarT.Enabled = true;
-            btnModificarT.Enabled = false;
-            btnEliminarT.Enabled = false;
+            //txtId_Tipo_Habitacion.Text = "";
+            //txtTipo_Habitacion.Text = "";
+            //btnAgregarT.Enabled = true;
+            //btnModificarT.Enabled = false;
+            //btnEliminarT.Enabled = false;
         }
     }
 }

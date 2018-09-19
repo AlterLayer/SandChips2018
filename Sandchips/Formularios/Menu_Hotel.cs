@@ -170,5 +170,12 @@ namespace Sandchips.Formularios
             Usuarios.Show();
             this.Hide();
         }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            Form Usuarios = new ReservacionHotel();
+            Usuarios.Show();
+            this.Hide();
+        }
     }
 }
