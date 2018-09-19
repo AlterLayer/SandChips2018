@@ -85,7 +85,7 @@ namespace Sandchips.Formularios
             Application.Exit();
         }
 
-        //GUARDAR CLIENTE
+        //GUARDAR CLIENTEs
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
 
