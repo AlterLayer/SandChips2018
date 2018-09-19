@@ -107,3 +107,6 @@ C:\Users\USER\Desktop\Sandchips-master\SandChips2018\Sandchips\obj\Release\Sandc
 C:\Users\USER\Desktop\Sandchips-master\SandChips2018\Sandchips\obj\Release\Sandchips.csproj.GenerateResource.Cache
 C:\Users\USER\Desktop\Sandchips-master\SandChips2018\Sandchips\obj\Release\RdlCompile.cache
 C:\Users\USER\Desktop\Sandchips-master\SandChips2018\Sandchips\obj\Release\RdlCompile.compiled
+C:\Users\diego\Source\Repos\SandChips2018\Sandchips\bin\Release\Sandchips.exe.config
+C:\Users\diego\Source\Repos\SandChips2018\Sandchips\obj\Release\Sandchips.exe
+C:\Users\diego\Source\Repos\SandChips2018\Sandchips\obj\Release\Sandchips.pdb

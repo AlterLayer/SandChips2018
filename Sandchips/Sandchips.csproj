@@ -74,6 +74,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetU.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ReservacionHotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReservacionHotel.designer.cs">
+      <DependentUpon>ReservacionHotel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Pruebadeseguridad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +197,9 @@
     <Compile Include="Models\ModelTipoUsuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\ReservacionHotel.resx">
+      <DependentUpon>ReservacionHotel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Pruebadeseguridad.resx">
       <DependentUpon>Pruebadeseguridad.cs</DependentUpon>
     </EmbeddedResource>
