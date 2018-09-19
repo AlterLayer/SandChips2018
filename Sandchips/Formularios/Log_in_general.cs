@@ -163,14 +163,24 @@ namespace Sandchips.Formularios
             double porcealtura = this.Height - (this.Height * 0.90);
             double anchoimg = this.Width * 0.2641;
             double alturaimg = this.Height * 0.71;
+            double imgancho = this.Width * 0.2700;
+            double imgaltura = this.Height * 0.71;
             double ancholabelusuario = this.Width * 0.474;
             double alturalabelusuario = this.Height * 0.45;
             double ancholabelclave = this.Width * 0.500;
             double alturalabelclave = this.Height * 0.60;
+            double ancholabelacceder = this.Width * 525;
+            double alturalabelacceder = this.Height * 0.75;
+            double ancholabelrecuperar = this.Width * 540;
+            double alturalabelrecuperar = this.Height * 0.75;
             pictureBox3.Size = new Size(Convert.ToInt32(anchoimg), Convert.ToInt32(alturaimg));
             pictureBox3.Location = new Point(Convert.ToInt32(porceancho), Convert.ToInt32(porcealtura));
+            pictureBox1.Size = new Size(Convert.ToInt32(imgancho), Convert.ToInt32(imgaltura));
+            pictureBox1.Location = new Point(Convert.ToInt32(porceancho), Convert.ToInt32(porcealtura));
             label1.Location = new Point(Convert.ToInt32(ancholabelusuario), Convert.ToInt32(alturalabelusuario));
             label2.Location = new Point(Convert.ToInt32(ancholabelclave), Convert.ToInt32(alturalabelclave));
+            label4.Location = new Point(Convert.ToInt32(ancholabelacceder), Convert.ToInt32(alturalabelacceder));
+            label3.Location = new Point(Convert.ToInt32(ancholabelrecuperar), Convert.ToInt32(alturalabelrecuperar));
 
             //Posicion de txtusuario
             double porceanchotxtusu = this.Width - (this.Width * 0.575);
@@ -268,6 +278,11 @@ namespace Sandchips.Formularios
             Recuperar hab = new Recuperar();
             hab.Show();
             this.Hide();
+        }
+
+        private void pictureBox3_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
