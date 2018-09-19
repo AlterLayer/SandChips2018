@@ -108,3 +108,4 @@ C:\Users\Pamela Mayén\Source\Repos\SandChips2018\Sandchips\obj\Release\Sandchip
 C:\Users\Pamela Mayén\Source\Repos\SandChips2018\Sandchips\obj\Release\RdlCompile.cache
 C:\Users\Pamela Mayén\Source\Repos\SandChips2018\Sandchips\obj\Release\RdlCompile.compiled
 C:\Users\Pamela Mayén\Source\Repos\SandChips2018\Sandchips\obj\Release\Sandchips.Formularios.Reporte.resources
+C:\Users\Pamela Mayén\Source\Repos\SandChips2018\Sandchips\obj\Release\Sandchips.Formularios.ReservacionHotel.resources
